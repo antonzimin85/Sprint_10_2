@@ -1,0 +1,6 @@
+BASE_URL = "https://qa-desk.stand.praktikum-services.ru/api/"
+SIGN_UP_ENDPOINT = f"{BASE_URL}signup"
+SIGN_IN_ENDPOINT = f"{BASE_URL}signin"
+CREATE_LISTING_ENDPOINT = f"{BASE_URL}create-listing"
+UPDATE_LISTING_ENDPOINT = f"{BASE_URL}update-offer"
+DELETE_LISTING_ENDPOINT = f"{BASE_URL}listings"
