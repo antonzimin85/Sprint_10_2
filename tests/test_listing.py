@@ -28,15 +28,11 @@ class TestListing:
         listing_id = "1960"
         update_data = ListingData.UPDATE_LISTING_DATA.copy()
         response = ListingApi.update_listing(access_token, listing_id, update_data)
-        assert (
-            response.status_code == ResponseStatus.UNAUTHORIZED
-            and response.json()["message"] == ErrorMessages.UNAUTHORIZED_ERROR_MESSAGE
-        )
+        assert response.status_code == ResponseStatus.UNAUTHORIZED
+        assert response.json()["message"] == ErrorMessages.UNAUTHORIZED_ERROR_MESSAGE
 
     def test_delete_listing_deleted_successfully(self, listing_id_and_token):
         token, listing_id = listing_id_and_token
         response = ListingApi.delete_listing(token, listing_id)
-        assert (
-            response.status_code == ResponseStatus.OK
-            and response.json()["message"] == SuccessMessages.DELETE_LISTING_MESSAGE
-        )
+        assert response.status_code == ResponseStatus.OK
+        assert response.json()["message"] == SuccessMessages.DELETE_LISTING_MESSAGE
